@@ -7,7 +7,7 @@ public class Application {
     public static void main(String[] args) {
         CalculatorConfig config = new CalculatorConfig();
 
-        CalculatorController controller = new CalculatorController(config.getOutputView());
+        CalculatorController controller = new CalculatorController(config.getOutputView(), config.getCalculator());
 
         controller.addition();
     }
