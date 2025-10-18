@@ -25,6 +25,7 @@ public class CalculatorController {
         }
         StringToExpressionConverter converter = new StringToExpressionConverter();
         Expression expression = converter.convert(input);
-        calculator.add(expression);
+        String response = calculator.add(expression);
+        view.printFormattingMessage(Message.CALCULATION_RESPONSE, response);
     }
 }

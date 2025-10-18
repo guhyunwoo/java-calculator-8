@@ -8,7 +8,7 @@ public class Calculator {
         String result = "0";
         for(String number : numbers) {
             if(Integer.parseInt(number) < 0) throw new IllegalArgumentException("음수는 입력할 수 없습니다.");
-            result = addByString(result, number);
+            result = addByString(result, number.trim());
         }
         return result;
     }
