@@ -1,5 +1,8 @@
 package calculator.domain;
 
+import calculator.error.NegativeNumberException;
+import calculator.error.NotANumberException;
+
 public class Term {
     private final String value;
 
@@ -9,13 +12,13 @@ public class Term {
 
     public void validateNegative() {
         if (value.startsWith("-")) {
-            throw new IllegalArgumentException("음수는 입력할 수 없습니다.");
+            throw new NegativeNumberException();
         }
     }
 
     public void validateTermFormat() {
         if (!value.matches("\\d+")) {
-            throw new IllegalArgumentException("숫자가 아닌 값이 입력되었습니다.");
+            throw new NotANumberException();
         }
     }
 
