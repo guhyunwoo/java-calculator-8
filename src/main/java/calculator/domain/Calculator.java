@@ -4,21 +4,17 @@ public class Calculator {
     private final ExpressionParser expressionParser = new ExpressionParser();
 
     public String add(Expression expression) {
-        String[] numbers = expressionParser.parseExpression(expression);
+        Terms terms = expressionParser.parseExpression(expression);
         String result = "0";
 
-        for(String number : numbers) {
-            number = number.trim();
+        for(Term term : terms) {
+            term = new Term(term.trim());
 
-            if (number.startsWith("-")) {
-                throw new IllegalArgumentException("음수는 입력할 수 없습니다.");
-            }
+            term.validateNegative();
 
-            if (!number.matches("\\d+")) {
-                throw new IllegalArgumentException("숫자가 아닌 값이 입력되었습니다.");
-            }
+            term.validateTermFormat();
 
-            result = addByString(result, number);
+            result = addByString(result, term.value());
         }
 
         return result;

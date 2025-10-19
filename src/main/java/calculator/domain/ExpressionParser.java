@@ -6,14 +6,14 @@ import java.util.regex.Pattern;
 public class ExpressionParser {
     private final Delimiters delimiters = new Delimiters();
 
-    public String[] parseExpression(Expression expression) {
+    public Terms parseExpression(Expression expression) {
         String exp = expression.getExpression();
 
         if (exp.startsWith("//")) {
             exp = extractCustomDelimiter(exp);
         }
 
-        return exp.split(delimiters.regex());
+        return new Terms(exp.split(delimiters.regex()));
     }
 
     private String extractCustomDelimiter(String exp) {
