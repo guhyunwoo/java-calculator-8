@@ -11,11 +11,11 @@ public class Calculator {
             number = number.trim();
 
             if (number.startsWith("-")) {
-                throw new IllegalArgumentException("음수는 입력할 수 없습니다: " + number);
+                throw new IllegalArgumentException("음수는 입력할 수 없습니다.");
             }
 
             if (!number.matches("\\d+")) {
-                throw new IllegalArgumentException("숫자가 아닌 값이 입력되었습니다");
+                throw new IllegalArgumentException("숫자가 아닌 값이 입력되었습니다.");
             }
 
             result = addByString(result, number);
