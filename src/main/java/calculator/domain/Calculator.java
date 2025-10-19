@@ -3,7 +3,7 @@ package calculator.domain;
 public class Calculator {
     private final ExpressionParser expressionParser = new ExpressionParser();
 
-    public String add(Expression expression) {
+    public String sum(Expression expression) {
         Terms terms = expressionParser.parseExpression(expression);
         String result = "0";
 
@@ -14,13 +14,13 @@ public class Calculator {
 
             term.validateTermFormat();
 
-            result = addByString(result, term.value());
+            result = sumByString(result, term.value());
         }
 
         return result;
     }
 
-    private String addByString(String num1, String num2) {
+    private String sumByString(String num1, String num2) {
         StringBuilder result = new StringBuilder();
 
         int i = num1.length() - 1;
