@@ -19,7 +19,7 @@ public class CalculatorController {
     public void addition() {
         view.printMessage(Message.ADDITION_CALCULATION_MESSAGE);
         Expression expression = inputHandler.inputHandle();
-        String response = calculator.add(expression);
+        String response = calculator.sum(expression);
         view.printFormattingMessage(Message.CALCULATION_RESPONSE, response);
     }
 }
