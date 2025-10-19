@@ -27,9 +27,7 @@ class TermTest {
         NotANumberException ex = assertThrows(NotANumberException.class, term::validateTermFormat);
         assertEquals(ErrorMessage.NOT_A_NUMBER.getMessage(), ex.getMessage());
     }
-
-
-
+    
     @Test
     void 정상적인_값이_입력되면_문자_예외가_발생하지_않는다() {
         Term term = new Term("100");
