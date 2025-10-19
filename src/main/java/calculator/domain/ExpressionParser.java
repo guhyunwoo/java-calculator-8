@@ -17,17 +17,16 @@ public class ExpressionParser {
     }
 
     private String extractCustomDelimiter(String exp) {
-        Matcher m = Pattern.compile("//(?:\\[(.*?)]|(\\.))\\n(.*)").matcher(exp);
+        exp = exp.replace("\\n", "\n");
+        Matcher m = Pattern.compile("//(.+?)\\n(.*)").matcher(exp);
 
         if (!m.find()) {
             throw new IllegalArgumentException("잘못된 커스텀 구분자 형식입니다.");
         }
 
-        String customDelimiter = m.group(2);
-        if (m.group(1) != null) customDelimiter = m.group(1);
-
+        String customDelimiter = m.group(1);
         delimiters.addCustomDelimiter(Pattern.quote(customDelimiter));
 
-        return m.group(3);
+        return m.group(2);
     }
 }
