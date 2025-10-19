@@ -9,7 +9,7 @@ public class Application {
 
         CalculatorController controller = new CalculatorController(
                 config.getOutputView(),
-                config.getCalculator(),
+                config.getSumCalculator(),
                 config.getInputHandler()
         );
 
