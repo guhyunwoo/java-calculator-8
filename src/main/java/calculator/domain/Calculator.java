@@ -1,10 +1,10 @@
 package calculator.domain;
 
 public class Calculator {
-    private final ExpressionParser expressionParser = new ExpressionParser();
+    private final InputParser inputParser = new InputParser();
 
-    public String sum(Expression expression) {
-        Terms terms = expressionParser.parseExpression(expression);
+    public String sum(String input) {
+        Terms terms = inputParser.parseInput(input);
         String result = "0";
 
         for(Term term : terms) {

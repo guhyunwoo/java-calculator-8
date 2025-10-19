@@ -1,7 +1,6 @@
 package calculator.controller;
 
 import calculator.domain.Calculator;
-import calculator.domain.Expression;
 import calculator.view.Message;
 import calculator.view.View;
 
@@ -18,8 +17,8 @@ public class CalculatorController {
 
     public void addition() {
         view.printMessage(Message.ADDITION_CALCULATION_MESSAGE);
-        Expression expression = inputHandler.inputHandle();
-        String response = calculator.sum(expression);
+        String input = inputHandler.inputHandle();
+        String response = calculator.sum(input);
         view.printFormattingMessage(Message.CALCULATION_RESPONSE, response);
     }
 }
