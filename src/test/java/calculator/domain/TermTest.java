@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TermTest {
-
     @Test
     void 음수가_입력되면_예외가_발생한다() {
         Term term = new Term("-10");
