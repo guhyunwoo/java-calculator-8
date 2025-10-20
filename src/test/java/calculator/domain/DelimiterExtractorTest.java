@@ -8,13 +8,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DelimiterExtractorTest {
-    DelimiterExtractor delimiterExtractor = new DelimiterExtractor();
-    Delimiters delimiters = new Delimiters();
-    Delimiters customDelimiters = new Delimiters();
+    private final DelimiterExtractor delimiterExtractor = new DelimiterExtractor();
+    private final Delimiters delimiters = new Delimiters();
 
     @Test
     void 정규식_형태로_값이_들어오면_커스텀_구분자를_추출해야_한다() {
         String input = "//***\\n10***10000";
+        Delimiters customDelimiters = new Delimiters();
 
         delimiterExtractor.extract(input, delimiters);
         customDelimiters.addCustomDelimiter(Pattern.quote("***"));
