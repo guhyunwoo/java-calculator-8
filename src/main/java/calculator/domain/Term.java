@@ -1,7 +1,6 @@
 package calculator.domain;
 
-import calculator.error.NegativeNumberException;
-import calculator.error.NotANumberException;
+import calculator.error.ErrorMessage;
 
 public class Term {
     private final String value;
@@ -12,13 +11,13 @@ public class Term {
 
     public void validateNegative() {
         if (value.startsWith("-")) {
-            throw new NegativeNumberException();
+            throw new IllegalArgumentException(ErrorMessage.NEGATIVE_NUMBER.getMessage());
         }
     }
 
     public void validateTermFormat() {
         if (!value.matches("\\d+")) {
-            throw new NotANumberException();
+            throw new IllegalArgumentException(ErrorMessage.NOT_A_NUMBER.getMessage());
         }
     }
 
