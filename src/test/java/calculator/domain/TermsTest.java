@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.Iterator;
 
 class TermsTest {
-
     @Test
     void 문자열_배열로_객체들을_정상적으로_생성해야_한다() {
         String[] input = {"1", "2", "3"};
